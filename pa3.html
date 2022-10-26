@@ -78,8 +78,8 @@
 <body>
     
     <!-- Page header -->
-    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator Prototype <br></h1>
-
+    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator Prototype <br></h1>'
+    
     <!-- Commands Table -->
     <table id="Generator">
         <caption> Commands </caption>
@@ -112,6 +112,18 @@
             <td> Text Color </td>
             <td> Change the color of an element by element id </td>
             <td><input type="color" id="text-color" value="#FFFFFF" onchange="textColor()"></input></td>
+        </tr>
+        <tr>
+            <td> Text Alignment </td>
+            <td> Change the alignment of an element by element id </td>
+            <td>
+                <select name="selected-align" id="align" onchange="textAlign()">
+                    <option id="default" selected>-- Select Alignment --</option>
+                    <option value="center"> Center </option>
+                    <option value="left"> Left </option>
+                    <option value="right"> Right </option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td> Reset </td>

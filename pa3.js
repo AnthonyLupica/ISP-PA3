@@ -9,7 +9,7 @@
 // page is a string that is incrementally appended to as the user gives commands. 
 // myWindow is an indentifier for a new window. 
 // On each peek(), it is displayed up-to-date with the current content of the page
-let page = "";
+var page = "";
 var myWindow = null;
 
 /* Global constants that restrict the number of each type of element that the user can create */
@@ -306,6 +306,66 @@ function textColor()
     }
 }
 
+function textAlign()
+{
+    // prompt for an element id
+    const elemID = prompt("Which element would you like to assign this text alignment to (subscript identifier)?");
+
+    // if the user hits cancel
+    if (elemID == null)
+    {
+        // reset select form for text alignment to default "hidden" option
+        document.querySelector("select").value = document.getElementById("default").value;
+        return;
+    }
+
+    // validate the id (is it in the id set?)
+    if (!assignedID.has(elemID))
+    {
+        alert("No element with id '" + elemID + "' could be found");
+        document.querySelector("select").value = document.getElementById("default").value;
+        return;
+    }
+    
+    // locally store the selected option
+    let newAlign = document.querySelector("select").value;
+
+    // determine which CSS align variable needs to be updated
+    switch (elemID)
+    {
+        case "h1":
+            h1Align = newAlign;
+            break;
+        case "h2":
+            h2Align = newAlign;
+            break;
+        case "h3":
+            h3Align = newAlign;
+            break;
+        case "h4":
+            h4Align = newAlign;
+            break;
+        case "h5":
+            h5Align = newAlign;
+            break;
+        case "h6":
+            h6Align = newAlign;
+            break;     
+        case "p1":
+            p1Align = newAlign;
+            break;
+        case "p2":
+            p2Align = newAlign;
+            break;
+        case "p3":
+            p3Align = newAlign;
+            break;
+        case "p4":
+            p4Align = newAlign;
+            break;
+    }
+}
+
 //@TODO before submission, make sure this function is up to date
 // reset() is responsible for returning all non-const global variables back to the state they had on page load
 function reset() 
@@ -354,6 +414,9 @@ function reset()
     // reset color picker values to white
     document.getElementById("bg-color").value = "#FFFFFF"
     document.getElementById("text-color").value = "#FFFFFF"
+
+    // reset select form for text alignment to default "hidden" option
+    document.querySelector("select").value = document.getElementById("default").value;
 }
 
 // close() closes the design window
