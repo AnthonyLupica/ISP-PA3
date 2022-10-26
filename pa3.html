@@ -2,88 +2,138 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
-    <title>ISP-PA3</title>
+    <title> ISP-PA3 </title>
 
+    <!-- CSS DEFINED BELOW -->
     <style>
         
-        /*Background polka-dot style*/
+        /* Background polka-dot style */
         body 
         {
-            background-color: #2f1a1e;
-            opacity: 1;
-            background-image:  radial-gradient(#957c51 0.5px, transparent 0.5px), radial-gradient(#957c51 0.5px, #2f1a1e 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0,10px 10px;
+            background-color : #2f1a1e;
+            opacity : 1.0;
+            background-image : radial-gradient(#957c51 0.5px, transparent 0.5px), radial-gradient(#957c51 0.5px, #2f1a1e 0.5px);
+            background-size : 20px 20px;
+            background-position : 0 0,10px 10px;
         }
         
-        h1
+        /* TABLE STYLES BELOW */
+
+        /* Styles common to entire table */
+        #Generator 
         {
-            color : white;
+            width : 75%;
+            opacity: 0.65;
+
+            /* Align Center */
+            margin-left : auto; 
+            margin-right : auto;
         }
-        
-        h2 
+
+        /* Styles common to all table headers and table data */
+        #Generator td, #Generator th
         {
+            border : 3px solid #8c8c8c;
+            padding : 6px;
             color : white;
         }
 
-        th
+        /* Styles common to only table headers */
+        #Generator th 
         {
-            color : white;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-align: center;
+            font-size : 115%;
+            background-color: #211215;
         }
 
-        td
-        
+        /* Styles common to all even numbered rows */
+        #Generator tr:nth-child(even)
         {
+            background-color: #63363e;
+        }
+
+        /* Styles on cursor hover */
+        #Generator tr:hover 
+        {
+            background-color: #6c6a66
+        }
+
+        /* Styles common to all table captions */
+        #Generator caption 
+        {
+            font-size : 175%;
             color : white;
         }
-  
     </style>
 </head>
-
 <body>
     
-    <h1 style="text-align : center">Anthony Lupica's Web Page Generator</h1>
+    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator <br></h1>
 
-    <table border="1" style="width:100%">
+    <!-- Commands Table -->
+    <table id="Generator">
+        <caption> Commands </caption>
         <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th> Item </th>
+            <th> Description </th>
+            <th> Action </th>
         </tr>
         <tr>
-            <td>Open</td>
-            <td>Open the design window</td>
-            <td><button onclick="openWin()">Open</button></td>
+            <td> Open </td>
+            <td> Open the design window </td>
+            <td><button onclick="openWin()"> Open </button></td>
         </tr>
         <tr>
-            <td>Button</td>
-            <td>Add a button to the design window</td>
-            <td><button onclick="addButton()">Add</button></td>
+            <td> Button </td>
+            <td> Add a button to the design window </td>
+            <td><button onclick="addButton()"> Add </button></td>
         </tr>
         <tr>
-            <td>Examples</td>
-            <td>Add a button to open the example window</td>
-            <td><button onclick="addExamples()">Add</button></td>
+            <td> Examples </td>
+            <td> Add a button to open the example window </td>
+            <td><button onclick="addExamples()"> Add </button></td>
         </tr>
         <tr>
-            <td>Close</td>
-            <td>Close the design window</td>
-            <td><button onclick="closeWindow()">Close</button></td>
+            <td> Close </td>
+            <td> Close the design window </td>
+            <td><button onclick="closeWindow()"> Close </button></td>
+        </tr>
+    </table><br>
+
+    <!-- Features Table -->
+    <table id="Generator">
+        <caption> Features </caption>
+        <tr>
+            <td> HTML </td>
+            <td> CSS </td>
+            <td> JavaScript </td>
+            <td> XML </td>
+        </tr>
+        <tr>
+            <td> Table </td>
+            <td> None </td>
+            <td> Window </td>
+            <td> None </td>
+            
+        </tr>
+        <tr>
+            <td> . </td>
+            <td> None </td>
+            <td> Event-driven Programming </td>
+            <td> None </td>
         </tr>
     </table>
 
-    <button onclick='window.open("http://www.w3schools.com/jsref/obj_window.asp")'>References</button>
-    <button onclick='window.open("http://www.w3schools.com/jsref/met_win_open.asp")'>Examples</button>
-    
     <script>
-        var page = "<p>ISP PA3</p>";
+        var page = "<p> ISP-PA3 </p>";
         var myWindow = null;
         
         function openWin() {
         if(myWindow != null) myWindow.close();
-            myWindow = window.open("", "ISP PA3", "width=800,height=168");
+            myWindow = window.open("", "ISP-PA3", "width=800,height=168");
             myWindow.document.write(page);
             }
         
@@ -107,31 +157,5 @@
             window.open("http://www.w3schools.com/jsref/met_win_open.asp");
         }
     </script>
-
-    <h2 style="text-align : center">Features</h2>
-
-    <table border="1" style="width:100%">
-        <tr>
-            <th>HTML</th>
-            <th>CSS</th>
-            <th>JavaScript</th>
-            <th>XML</th>
-            <!--<th>Others</th>-->
-        </tr>
-        <tr>
-            <th>Table</th>
-            <th>None</th>
-            <th>Window</th>
-            <th>None</th>
-            
-        </tr>
-        <tr>
-            <th>.</th>
-            <th>None</th>
-            <th>Event-driven Programming</th>
-            <th>None</th>
-        </tr>
-    </table>
 </body>
-
 </html>
