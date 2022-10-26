@@ -12,7 +12,7 @@
     <!-- CSS DEFINED BELOW -->
     <style>
         
-        /* Background polka-dot style */
+        /* Background polka-dot style from https://www.magicpattern.design/tools/css-backgrounds*/
         body 
         {
             background-color : #2f1a1e;
@@ -91,27 +91,32 @@
         <tr>
             <td> Peek </td>
             <td> Peek the design window </td>
-            <td><button onclick="updateWindow()"> Peek </button></td>
+            <td><button onclick="peek()"> peek </button></td>
         </tr>
         <tr>
             <td> Heading </td>
             <td> Add a heading to the page </td>
-            <td><button onclick="setHeading()"> Heading </button></td>
+            <td><button onclick="addHeading()"> addHeading </button></td>
         </tr>
         <tr>
-            <td> Button </td>
-            <td> Add a button to the design window </td>
-            <td><button onclick="addButton()"> Add </button></td>
+            <td> Text </td>
+            <td> Add body content to the page </td>
+            <td><button onclick="addText()"> addText </button></td>
         </tr>
         <tr>
-            <td> Examples </td>
-            <td> Add a button to open the example window </td>
-            <td><button onclick="addExamples()"> Add </button></td>
+            <td> Background Color </td>
+            <td> Change the background color of the page </td>
+            <td><input type="color" id="bg-color" value="#FFFFFF"></input></td>
+        </tr>
+        <tr>
+            <td> Text Color </td>
+            <td> Change the color of an element by ID </td>
+            <td><input type="color" id="text-color" value="#FFFFFF" onchange="textColor()"></input></td>
         </tr>
         <tr>
             <td> Close </td>
             <td> Close the design window </td>
-            <td><button onclick="closeWindow()"> Close </button></td>
+            <td><button onclick="close()"> close </button></td>
         </tr>
     </table><br>
 
@@ -119,17 +124,16 @@
     <table id="Generator">
         <caption> Features </caption>
         <tr>
-            <td> HTML </td>
-            <td> CSS </td>
-            <td> JavaScript </td>
-            <td> XML </td>
+            <th> HTML </th>
+            <th> CSS </th>
+            <th> JavaScript </th>
+            <th> XML </th>
         </tr>
         <tr>
             <td> Table </td>
             <td> None </td>
             <td> Window </td>
             <td> None </td>
-            
         </tr>
         <tr>
             <td> . </td>
