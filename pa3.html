@@ -66,12 +66,13 @@
         {
             font-size : 175%;
             color : white;
-        }
+        } 
     </style>
 </head>
 <body>
     
-    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator <br></h1>
+    <!-- Page header -->
+    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator Prototype <br></h1>
 
     <!-- Commands Table -->
     <table id="Generator">
@@ -82,9 +83,14 @@
             <th> Action </th>
         </tr>
         <tr>
-            <td> Open </td>
-            <td> Open the design window </td>
-            <td><button onclick="openWin()"> Open </button></td>
+            <td> Peek </td>
+            <td> Peek the design window </td>
+            <td><button onclick="updateWindow()"> Peek </button></td>
+        </tr>
+        <tr>
+            <td> Heading </td>
+            <td> Add a heading to the page </td>
+            <td><button onclick="setHeading()"> Heading </button></td>
         </tr>
         <tr>
             <td> Button </td>
@@ -127,15 +133,59 @@
         </tr>
     </table>
 
+    <div id="target"></div>
     <script>
-        var page = "<p> ISP-PA3 </p>";
+        var page = "";
         var myWindow = null;
+
+        // updateWindow() opens an overwritten window which includes all modifications 
+        // to 'page' that the user has made since they last peeked
+        function updateWindow() 
+        {
+            if(myWindow != null)
+            {
+                myWindow.close();
+            } 
+             
+            // open the new window with a specified width and height
+            // (URL, name, specs)
+            myWindow = window.open("", "ISP-PA3-CHILD", "width=800,height=200");
+
+            /* CALLS TO DOCUMENT.WRITE() BELOW UPDATE THE WINDOW WITH MODIFIED PAGE CONTENTS */ 
+            myWindow.document.write("<!DOCTYPE html><html><head><style>");
+            myWindow.document.write
+            ( 
+               // Individual CSS blocks are written line by line
+               "h1, h2, h3, h4, h5, h6 { text-align : center; }" // style for headings
+            );
+            myWindow.document.write("</style></head><body>");
+            myWindow.document.write(page);                       // the contents of 'page' goes in <body>
+            myWindow.document.write("</body></html>"); 
+        }
+
+        // setHeading prompts for heading input (headingEntry) and a size X.
+        // Page is appended with "<hX> HeadingEntry </hX>"
+        function setHeading()
+        {
+            let headingEntry = prompt("Enter the text for the heading");
         
-        function openWin() {
-        if(myWindow != null) myWindow.close();
-            myWindow = window.open("", "ISP-PA3", "width=800,height=168");
-            myWindow.document.write(page);
-            }
+            // validate heading 
+            while (!headingEntry)
+            {
+                headingEntry = prompt("Valid entry is text of a minimum of one character");
+            } 
+
+            let X = prompt("...And now choose a heading size (1 - 6) for the text to display in");
+
+            // validate heading size
+            while (X <= 0 || X > 6)
+            {
+                X = prompt("Valid entry is 1 (for maximum heading size) through 6 (for minimum heading size");
+            } 
+
+            // appening "<hX> HeadingEntry </hX>" to page
+            page += "<h" + X + ">" + headingEntry + "</h" + X + ">";
+        }
         
         function addButton() {
             page += "<button>A do nothing button</button>";
