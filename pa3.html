@@ -39,15 +39,15 @@
         #Generator td, #Generator th
         {
             border : 3px solid #8c8c8c;
-            padding : 6px;
+            padding : 3px;
             color : white;
         }
 
         /* Styles common to only table headers */
         #Generator th 
         {
-            padding-top: 8px;
-            padding-bottom: 8px;
+            padding-top: 6px;
+            padding-bottom: 6px;
             text-align: center;
             font-size : 115%;
             background-color: #211215;
@@ -90,7 +90,7 @@
         </tr>
         <tr>
             <td> Peek </td>
-            <td> Peek the design window </td>
+            <td> Peek into the design window </td>
             <td><button onclick="peek()"> peek </button></td>
         </tr>
         <tr>
@@ -110,8 +110,13 @@
         </tr>
         <tr>
             <td> Text Color </td>
-            <td> Change the color of an element by ID </td>
+            <td> Change the color of an element by element id </td>
             <td><input type="color" id="text-color" value="#FFFFFF" onchange="textColor()"></input></td>
+        </tr>
+        <tr>
+            <td> Reset </td>
+            <td> reset the design window, and return all styles to default settings </td>
+            <td><button onclick="reset()"> reset </button></td>
         </tr>
         <tr>
             <td> Close </td>
@@ -131,14 +136,32 @@
         </tr>
         <tr>
             <td> Table </td>
-            <td> None </td>
+            <td> Text Color </td>
             <td> Window </td>
             <td> None </td>
         </tr>
         <tr>
-            <td> . </td>
-            <td> None </td>
+            <td> Heading </td>
+            <td> Text Alignment </td>
             <td> Event-driven Programming </td>
+            <td> None </td>
+        </tr>
+        <tr>
+            <td> Paragraph </td>
+            <td> Background Color </td>
+            <td> DOM Manipulation </td>
+            <td> None </td>
+        </tr>
+        <tr>
+            <td> Subscript </td>
+            <td> Font Size </td>
+            <td> Input Contents to the Page </td>
+            <td> None </td>
+        </tr>
+        <tr>
+            <td> . </td>
+            <td> . </td>
+            <td> Erase Contents of the Page </td>
             <td> None </td>
         </tr>
     </table>
