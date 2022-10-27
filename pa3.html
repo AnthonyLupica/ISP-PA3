@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <!-- Page title -->
     <title> ISP-PA3 </title>
 
@@ -38,16 +37,16 @@
         /* Styles common to all table headers and table data */
         #Generator td, #Generator th
         {
-            border : 3px solid #8c8c8c;
-            padding : 3px;
+            border : 2px solid #8c8c8c;
+            padding : 2px;
             color : white;
         }
 
         /* Styles common to only table headers */
         #Generator th 
         {
-            padding-top: 6px;
-            padding-bottom: 6px;
+            padding-top: 4px;
+            padding-bottom: 4px;
             text-align: center;
             font-size : 115%;
             background-color: #211215;
@@ -68,115 +67,152 @@
         /* Styles common to all table captions */
         #Generator caption 
         {
-            font-size : 175%;
+            font-size : 160%;
             color : white;
         } 
     
     </style>
-
 </head>
 <body>
-    
     <!-- Page header -->
-    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator Prototype <br></h1>'
+    <h1 style="text-align : center; color : white"> Anthony Lupica's Web Page Generator Prototype </h1>'
     
     <!-- Commands Table -->
     <table id="Generator">
+        
         <caption> Commands </caption>
+        
         <tr>
             <th> Item </th>
             <th> Description </th>
             <th> Action </th>
         </tr>
+        
         <tr>
             <td> Peek </td>
             <td> Peek into the design window </td>
             <td><button onclick="peek()"> peek </button></td>
         </tr>
+        
         <tr>
             <td> Heading </td>
             <td> Add a heading to the page </td>
             <td><button onclick="addHeading()"> addHeading </button></td>
         </tr>
+        
         <tr>
             <td> Text </td>
-            <td> Add body content to the page </td>
+            <td> Add paragraph content to the page </td>
             <td><button onclick="addText()"> addText </button></td>
         </tr>
+        
         <tr>
             <td> Background Color </td>
             <td> Change the background color of the page </td>
-            <td><input type="color" id="bg-color" value="#FFFFFF"></input></td>
+            <td><input type="color" id="bg-color" value="#FFFFFF"></td>
         </tr>
+        
         <tr>
             <td> Text Color </td>
-            <td> Change the color of an element by element id </td>
-            <td><input type="color" id="text-color" value="#FFFFFF" onchange="textColor()"></input></td>
+            <td> Change the color of an element by id </td>
+            <td><input type="color" id="text-color" value="#FFFFFF" onchange="textColor()"></td>
         </tr>
+        
         <tr>
             <td> Text Alignment </td>
-            <td> Change the alignment of an element by element id </td>
+            <td> Change the alignment of an element by id </td>
             <td>
                 <select name="selected-align" id="align" onchange="textAlign()">
-                    <option id="default" selected>-- Select Alignment --</option>
+                    <option id="default1" selected hidden>-- Select Alignment --</option>
                     <option value="center"> Center </option>
                     <option value="left"> Left </option>
                     <option value="right"> Right </option>
                 </select>
             </td>
         </tr>
+
+        <tr>
+            <td> Font Family </td>
+            <td> Change the font of an element by id </td>
+            <td>
+                <select name="selected-font" id="font" style="max-width:115px;" onchange="fontFamily()">
+                    <option id="default2" selected hidden>-- Select Font --</option>
+                    <option value="arial"> Arial,sans-serif </option>
+                    <option value="verdana"> Verdana,sans-serif </option>
+                    <option value="tahoma"> Tahoma,sans-serif </option>
+                    <option value="garamond"> Garamond,serif </option>
+                    <option value="georgia"> Georgia,serif </option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Font Size </td>
+            <td> Change the font size of an element by id </td>
+            <td><input id="font-size" type="text" placeholder=" px(1 - 50)" size="5" onchange="fontSize()"></td>
+        </tr>
+        
         <tr>
             <td> Reset </td>
-            <td> reset the design window, and return all styles to default settings </td>
+            <td> Reset the design window, and return all styles to default settings </td>
             <td><button onclick="reset()"> reset </button></td>
         </tr>
+        
         <tr>
             <td> Close </td>
             <td> Close the design window </td>
             <td><button onclick="close()"> close </button></td>
         </tr>
+
     </table><br>
 
     <!-- Features Table -->
     <table id="Generator">
+        
         <caption> Features </caption>
+        
         <tr>
             <th> HTML </th>
             <th> CSS </th>
             <th> JavaScript </th>
             <th> XML </th>
         </tr>
+        
         <tr>
             <td> Table </td>
             <td> Text Color </td>
             <td> Window </td>
             <td> None </td>
         </tr>
+        
         <tr>
             <td> Heading </td>
             <td> Text Alignment </td>
             <td> Event-driven Programming </td>
             <td> None </td>
         </tr>
+        
         <tr>
             <td> Paragraph </td>
             <td> Background Color </td>
             <td> DOM Manipulation </td>
             <td> None </td>
         </tr>
+        
         <tr>
             <td> Subscript </td>
             <td> Font Size </td>
             <td> Input Contents to the Page </td>
             <td> None </td>
         </tr>
+        
         <tr>
-            <td> . </td>
-            <td> . </td>
+            <td> HTML Formatting Elements </td>
+            <td> Font Family </td>
             <td> Erase Contents of the Page </td>
             <td> None </td>
         </tr>
-    </table>
 
+    </table>
 </body>
 </html>
